@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=description content="a web site that we try to develop at
+     a simple level and complete the deficiencies (beta)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>about</title>
+</head>
+<body>
+    <strong><p>evet bu kısımı Türkçe yazmayı uygun gördük hakkımızda kısmı için...</p></strong>
+    <br>
+    <p>
+        - burada basit bir arayüzde kendim eğittiğim yapay zekanın geliştirmesine devam ederiyorum ve bunun sonucuda elde ettiğim sonuçlar beni tatmin etmeye başladı
+        <br>
+        - uygulamamız event-Loop çerçevesinde güvenlik yamaları ile tamamladık
+        JWT HS512 algoritmasına geçildi her kullanıcıya özel gizli anahtar oluşturulur ve her JWT kullanıcılara özel olarak oluşturulan gizli anahtarı kullanarak sağlar
+        JWT oturum süreleri 3 dakikadır ve dolunca yeniden oturum açmanız gerekir
+        kullanıcılar kullanıcı adı ve şifresi oluşturabilmesi için kullanıcı adının 4 karakterden fazla şifrenin ise 8 karakter ve üzeri güçlü bir şifre olması gerekir
+        kullanıcılar birbirinden benzersiz oluşturulur her kullanıcının id' si vardır 
+        kullanıcıların verileri salt' lar ile şifreli bir şekilde tutulur hash algoritması olarah sha3-512 kullanılır
+        60 saniye içerisnde 16 istekde bulunabilirsiniz ve admin' ler discord kanalına mesaj iletebilir
+        <br>
+        - (yeni yama: kullanıcılar artık e-posta belirterek ekstradan güvenlik katmanına gidecek yolu oluşturttuk kayıt olduklarında şimdilik basit bir e-posta gönderiliyor)
+        <br>
+        gerekli döngüyü ve şimdilik ilkel olan her şeyi oluşturduk buradan diğer kullanıcıların suistimal etmeden kullanmasıdır 
+        <br>
+        ilk ileri web tabanlı uygulamam olup  bu kadar geliştirmelere tabii oldu gerçekten de heyecan verici artık ilerileyen vakitte (üniversiteyi kazandığımda) daha ileri düzeye doğru yol alacağız
+        <br>
+        - Aybars Yildirim
+    </p>
+    <br>
+    <p>eklemelerde bugün itibariyle (23.06.2023) son geliştirmesini aldı güvenlik anlamında bu uygulamada çığır açtık ve artık ara veriyoruz</p>
+    <a href="/referanse">return</a>
+    <p><strong>web haritası:</strong>
+        <ul>
+            <li>- POST /questioning <pre>{authenticate: true}</pre>
+                request body: <pre>{"query": ""}</pre>
+            </li>
+            <br>
+            <li>
+                - GET /questioning/:uuid
+            </li>
+            <br>
+            <li>
+                - DELETE /questioning/:uuid <pre>{authenticate: true}</pre>
+            </li>
+            <br>
+            <li>
+                - GET /referanse
+            </li>
+            <br>
+            <li>
+                - GET /about
+            </li>
+            <br>
+            <li>
+                - GET /discover
+            </li>
+            <br>
+            <li>
+                - GET /login
+            </li>
+            <br>
+            <li>
+                - POST /login
+                request body: <pre>{"username": "", email= "", "password": ""}</pre>
+            </li>
+            <br>
+            <li>
+                - POST /login
+                request header: <pre>Authorization: "Bearer ..."</pre>
+            </li>
+            <br>
+            <li>
+                - GET /logout <pre>{authenticate: true}</pre>
+            </li>
+            <br>
+            <li>
+                - GET /create
+            </li>
+            <br>
+            <li>
+                - POST /create
+                request body: <pre>{"email": "", "password": ""}</pre>
+            </li>
+        </ul>
+    </p>
+</body>
+</html>

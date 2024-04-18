@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=description content="a web site that we try to develop at
+     a simple level and complete the deficiencies (beta)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API referanse</title>
+    <style>
+        #query {
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>questioning form</h1>
+    <form id="myForm">
+        <label for="query">query:</label>
+        <textarea id="query" name="query"></textarea>
+        <br>
+        <input type="submit" value="send">
+    </form>
+    <div id="result"></div>
+    <br>
+    <a href="/profile">profile</a>
+    <a href="/discover">discover</a>
+    <br>
+    <br>
+    <a href="/about">about</a>
+    <a href="/create">if you haven't an account</a>
+    <br>
+    <br>
+    <a href="/login">login</a>
+    <a href="/logout">logout</a>
+    
+    <script>
+        document.getElementById("myForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            var formData = new FormData(event.target);
+            
+            try {
+                const response = await fetch('/questioning', {
+                    method: 'POST',
+                    body: JSON.stringify(Object.fromEntries(formData)),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    var responseData = await response.json();
+                    document.getElementById("result").innerHTML = `success: ${responseData.success}, message: ${responseData.message}, uuid: ${responseData.uuid}`;
+                } else {
+                    var errorData = await response.json();
+                    throw new Error(errorData.message);
+                }
+            } catch (error) {
+                document.getElementById("result").innerHTML = `error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

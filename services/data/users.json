@@ -1,0 +1,12 @@
+[
+  {
+    "username": "aybars",
+    "email": "aybarsyildirim.mail@gmail.com",
+    "password": "089eeedff65eac3a4c49ae68286d18d96ca6e957841bc92ec95af19e9ab9e67b",
+    "userId": "437598bc4365e53e",
+    "secret": "<SECRET>",
+    "salt": "efdb8c0885d8f6553d98d5fce8fe6963",
+    "timestamp": 1688594090397,
+    "role": "admin"
+  }
+]
